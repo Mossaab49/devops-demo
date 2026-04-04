@@ -6,11 +6,11 @@ let tasks = [
   { id: 1, title: "Initial task", completed: true },
   { id: 2, title: "Install Git and Node.js", "completed": true },
   { id: 2, title: "Learn DevOps basics", completed: false }
-  
+
 ];
 
 app.get('/', (req, res) => {
-  res.json({ message: "DevOps Task Manager API is running(lab 1)" });
+  res.json({ message: "DevOps Task Manager API is running (lab 1)" });
 });
 
 app.get('/tasks', (req, res) => {
@@ -18,9 +18,9 @@ app.get('/tasks', (req, res) => {
 });
 
 app.post('/tasks', (req, res) => {
-  const newTask = { id: tasks.length+1, title: req.body.title, completed: false };
+  const newTask = { id: tasks.length + 1, title: req.body.title, completed: false };
   tasks.push(newTask);
   res.status(201).json(newTask);
 });
 
-app.listen(3000, ()=> console.log("API running on port 3000"));
+app.listen(3000, () => console.log("API running on port 3000"));
